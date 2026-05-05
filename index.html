@@ -1,0 +1,174 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Nagesh B O — Solutions Architect</title>
+      <style>
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
+          .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+          header { text-align: center; padding: 3rem 0 2rem; }
+          .avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 1.2rem; background: #ddd; }
+          h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+          .subtitle { color: #666; font-size: 1.1rem; margin-bottom: 1rem; }
+          .bio { max-width: 600px; margin: 0 auto 1.5rem; color: #555; }
+          .links { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+          .links a { text-decoration: none; color: #fff; background: #0a66c2; padding: 0.5rem 1.2rem; border-radius: 5px; font-size: 0.9rem; transition: background 0.2s; }
+          .links a:hover { background: #004182; }
+          .links a.gh { background: #333; }
+          .links a.gh:hover { background: #555; }
+          .links a.email { background: #ea4335; }
+          .links a.email:hover { background: #c5221f; }
+          section { margin-bottom: 2.5rem; }
+          h2 { font-size: 1.3rem; border-bottom: 2px solid #0a66c2; padding-bottom: 0.4rem; margin-bottom: 1.2rem; }
+          .job { margin-bottom: 1.5rem; }
+          .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+          .job-title { font-weight: 600; font-size: 1.05rem; }
+          .job-date { color: #888; font-size: 0.85rem; }
+          .job-company { color: #0a66c2; font-weight: 500; }
+          .job-location { color: #888; font-size: 0.85rem; margin-bottom: 0.5rem; }
+          .job ul { padding-left: 1.2rem; color: #555; font-size: 0.92rem; }
+          .job li { margin-bottom: 0.4rem; }
+          .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+          .skills span { background: #e8f0fe; color: #1a73e8; padding: 0.3rem 0.7rem; border-radius: 3px; font-size: 0.82rem; }
+          .edu-item { margin-bottom: 1rem; }
+          .edu-item strong { display: block; }
+          .edu-item span { color: #888; font-size: 0.85rem; }
+          @media (max-width: 600px) { .job-header { flex-direction: column; } }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <header>
+              <!-- Replace src with your photo filename once uploaded -->
+              <img src="photo.jpg" alt="Nagesh B O" class="avatar">
+              <h1>Nagesh B O</h1>
+              <p class="subtitle">Solutions Architect</p>
+              <p class="bio">Partnering with commercial teams on pre-sales technical enablement and enterprise deal support. Working with enterprise customers, system
+  integrators, product & engineering teams, and solution architects across US and EU markets on integration design, implementation, and optimization.</p>
+              <div class="links">
+                  <a href="https://www.linkedin.com/in/nageshbo/">LinkedIn</a>
+                  <a href="https://github.com/nageshbo" class="gh">GitHub</a>
+                  <a href="mailto:your@email.com" class="email">Email</a>
+              </div>
+          </header>
+  
+          <section>
+              <h2>Experience</h2>
+  
+              <div class="job">
+                  <div class="job-header">
+                      <span class="job-title">Integration Specialist</span>
+                      <span class="job-date">Jan 2023 – Present</span>
+                  </div>
+                  <div class="job-company">Amazon</div>
+                  <div class="job-location">Greater London, UK · On-site</div>
+                  <ul>
+                      <li>Partnered with Engineering, Product, and Commercial teams to shape API and platform roadmaps, providing data-informed partner ecosystem
+  feedback.</li>
+                      <li>Built relationships with integration partners generating >$20B in annual revenue; reduced onboarding time from 14 days to 3 days across 4
+  regions.</li>
+                      <li>Built reference implementations, code samples, and documentation accelerating customer adoption of new API features.</li>
+                      <li>Launched a Gen AI Support Assistant consolidating EU and US support data, reducing ticket resolution time.</li>
+                      <li>Designed monitoring dashboards to analyze API usage patterns, detect errors, and track credential due dates.</li>
+                      <li>Delivered data-driven recommendations identifying inactive customers, throttling issues, and adoption gaps.</li>
+                  </ul>
+              </div>
+  
+              <div class="job">
+                  <div class="job-header">
+                      <span class="job-title">Application Engineer II</span>
+                      <span class="job-date">Apr 2020 – Jan 2023</span>
+                  </div>
+                  <div class="job-company">Amazon</div>
+                  <div class="job-location">Bengaluru, India · Remote</div>
+                  <ul>
+                      <li>Streamlined Oracle ERP processes by developing SQL/PLSQL-based automations and scheduled jobs.</li>
+                      <li>Led the Fixed Asset Adjustments Project — 18 features with 40 APIs for batch-level asset changes.</li>
+                      <li>Supported financial month-end closures by troubleshooting critical ERP issues.</li>
+                  </ul>
+              </div>
+  
+              <div class="job">
+                  <div class="job-header">
+                      <span class="job-title">Senior Specialist</span>
+                      <span class="job-date">Jun 2017 – Apr 2020</span>
+                  </div>
+                  <div class="job-company">Deloitte</div>
+                  <div class="job-location">Bengaluru, India</div>
+                  <ul>
+                      <li>Designed and developed reports, interfaces, conversions, and extensions for legacy and third-party systems.</li>
+                      <li>Built integrations using SOA Middleware 11g/12c and Oracle Integration Cloud (OIC).</li>
+                      <li>Implemented REST-based APIs (Node.js) and technology adapters for seamless data exchange.</li>
+                      <li>Integrated BOT solutions with Oracle ERP SaaS Cloud and contributed to conversational UI design.</li>
+                  </ul>
+              </div>
+  
+              <div class="job">
+                  <div class="job-header">
+                      <span class="job-title">Consultant</span>
+                      <span class="job-date">May 2013 – Jun 2017</span>
+                  </div>
+                  <div class="job-company">Deloitte</div>
+                  <div class="job-location">Bengaluru, India</div>
+                  <ul>
+                      <li>Technical Consultant for Oracle E-Business Suite R12 and SOA 11g.</li>
+                  </ul>
+              </div>
+  
+              <div class="job">
+                  <div class="job-header">
+                      <span class="job-title">Oracle ERP Analyst</span>
+                      <span class="job-date">Oct 2012 – Apr 2013</span>
+                  </div>
+                  <div class="job-company">Dell</div>
+                  <div class="job-location">Bengaluru, India</div>
+                  <ul>
+                      <li>Developed customer-facing documents and customized package extensions.</li>
+                      <li>Created Corrective Invoice report for Russia using XSL, XML, and PL/SQL.</li>
+                  </ul>
+              </div>
+  
+              <div class="job">
+                  <div class="job-header">
+                      <span class="job-title">Oracle EBS Analyst</span>
+                      <span class="job-date">Jul 2010 – Oct 2012</span>
+                  </div>
+                  <div class="job-company">Birlasoft</div>
+                  <div class="job-location">Bengaluru, India</div>
+                  <ul>
+                      <li>Designed Real-Time and Batch Interfaces to integrate Siebel CRM with Oracle Applications.</li>
+                      <li>Created custom reports using XML Publisher across Order to Cash and Procure to Pay modules.</li>
+                  </ul>
+              </div>
+          </section>
+  
+          <section>
+              <h2>Education</h2>
+              <div class="edu-item">
+                  <strong>Bangalore Institute of Technology</strong>
+                  <span>Bachelor of Engineering (BE), Information Science · 2006 – 2010</span>
+              </div>
+          </section>
+  
+          <section>
+              <h2>Skills</h2>
+              <div class="skills">
+                  <span>REST APIs</span>
+                  <span>Integration Architecture</span>
+                  <span>Oracle ERP</span>
+                  <span>SQL / PLSQL</span>
+                  <span>Node.js</span>
+                  <span>Oracle Integration Cloud</span>
+                  <span>SOA Middleware</span>
+                  <span>Technical Design</span>
+                  <span>BI Publisher</span>
+                  <span>XML / XSL</span>
+                  <span>API Design</span>
+                  <span>Gen AI</span>
+              </div>
+          </section>
+      </div>
+  </body>
+  </html>
