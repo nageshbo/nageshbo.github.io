@@ -6,169 +6,333 @@
       <title>Nagesh B O — Solutions Architect</title>
       <style>
           * { margin: 0; padding: 0; box-sizing: border-box; }
-          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
-          .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
-          header { text-align: center; padding: 3rem 0 2rem; }
-          .avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 1.2rem; background: #ddd; }
-          h1 { font-size: 2rem; margin-bottom: 0.3rem; }
-          .subtitle { color: #666; font-size: 1.1rem; margin-bottom: 1rem; }
-          .bio { max-width: 600px; margin: 0 auto 1.5rem; color: #555; }
-          .links { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-          .links a { text-decoration: none; color: #fff; background: #0a66c2; padding: 0.5rem 1.2rem; border-radius: 5px; font-size: 0.9rem; transition: background 0.2s; }
-          .links a:hover { background: #004182; }
-          .links a.gh { background: #333; }
-          .links a.gh:hover { background: #555; }
-          .links a.email { background: #ea4335; }
-          .links a.email:hover { background: #c5221f; }
-          section { margin-bottom: 2.5rem; }
-          h2 { font-size: 1.3rem; border-bottom: 2px solid #0a66c2; padding-bottom: 0.4rem; margin-bottom: 1.2rem; }
-          .job { margin-bottom: 1.5rem; }
-          .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-          .job-title { font-weight: 600; font-size: 1.05rem; }
-          .job-date { color: #888; font-size: 0.85rem; }
-          .job-company { color: #0a66c2; font-weight: 500; }
-          .job-location { color: #888; font-size: 0.85rem; margin-bottom: 0.5rem; }
-          .job ul { padding-left: 1.2rem; color: #555; font-size: 0.92rem; }
-          .job li { margin-bottom: 0.4rem; }
-          .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-          .skills span { background: #e8f0fe; color: #1a73e8; padding: 0.3rem 0.7rem; border-radius: 3px; font-size: 0.82rem; }
-          .edu-item { margin-bottom: 1rem; }
-          .edu-item strong { display: block; }
-          .edu-item span { color: #888; font-size: 0.85rem; }
-          @media (max-width: 600px) { .job-header { flex-direction: column; } }
+          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #333; line-height: 1.7; }
+  
+          /* Nav */
+          nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items:
+  center; z-index: 100; }
+          nav .name { font-weight: 700; font-size: 1rem; }
+          nav .nav-links { display: flex; gap: 1.5rem; }
+          nav .nav-links a { text-decoration: none; color: #555; font-size: 0.85rem; }
+          nav .nav-links a:hover { color: #1a5c5c; }
+  
+          /* Sections */
+          .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+          section { padding: 5rem 0; }
+          .section-label { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: #1a5c5c; }
+          .section-label::before { content: ''; width: 30px; height: 2px; background: #1a5c5c; }
+          .section-title { font-family: Georgia, 'Times New Roman', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 2rem; color: #111; }
+  
+          /* Hero */
+          .hero { display: flex; align-items: center; justify-content: space-between; padding: 6rem 0 4rem; gap: 3rem; }
+          .hero-text { flex: 1; }
+          .hero-tag { display: inline-block; background: #f0f7f7; color: #1a5c5c; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+  margin-bottom: 1.5rem; }
+          .hero-tag::before { content: '● '; color: #1a5c5c; }
+          .hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.2rem; }
+          .hero h1 span { color: #1a5c5c; }
+          .hero p { color: #666; font-size: 1rem; max-width: 500px; margin-bottom: 2rem; }
+          .hero-buttons { display: flex; gap: 1rem; }
+          .hero-buttons a { text-decoration: none; padding: 0.7rem 1.5rem; border-radius: 5px; font-size: 0.9rem; font-weight: 500; }
+          .btn-primary { background: #1a5c5c; color: #fff; }
+          .btn-secondary { background: #fff; color: #333; border: 1px solid #ddd; }
+          .hero-image { flex-shrink: 0; }
+          .hero-image img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; }
+  
+          /* About */
+          .about-content { max-width: 700px; color: #555; }
+          .about-content p { margin-bottom: 1.2rem; }
+          .about-content strong { color: #111; }
+  
+          /* Experience */
+          .exp-item { display: flex; gap: 3rem; padding: 2rem 0; border-top: 1px solid #eee; }
+          .exp-date { min-width: 140px; color: #888; font-size: 0.9rem; padding-top: 0.2rem; }
+          .exp-details { flex: 1; }
+          .exp-company { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+          .exp-role { color: #1a5c5c; font-weight: 500; font-size: 0.95rem; margin-bottom: 0.5rem; }
+          .exp-desc { color: #666; font-size: 0.9rem; }
+  
+          /* Education */
+          .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+          .edu-card { border: 1px solid #eee; border-radius: 8px; padding: 1.5rem; }
+          .edu-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+          .edu-card .school { color: #1a5c5c; font-size: 0.85rem; }
+  
+          /* Skills */
+          .skills-section { background: #f9fafb; padding: 5rem 0; }
+          .skill-group { margin-bottom: 1.5rem; }
+          .skill-group-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1a5c5c; margin-bottom: 0.6rem; }
+          .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+          .skill-tags span { background: #fff; border: 1px solid #ddd; padding: 0.4rem 0.9rem; border-radius: 4px; font-size: 0.82rem; color: #444; }
+  
+          /* Projects */
+          .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+          .project-card { border: 1px solid #eee; border-radius: 10px; padding: 1.8rem; }
+          .project-card .icon { font-size: 1.8rem; margin-bottom: 1rem; }
+          .project-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+          .project-card p { color: #666; font-size: 0.88rem; margin-bottom: 1rem; }
+          .project-card .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+          .project-card .tags span { background: #f5f5f5; padding: 0.25rem 0.6rem; border-radius: 3px; font-size: 0.75rem; color: #555; }
+          .project-card .learn-more { display: inline-block; background: #1a5c5c; color: #fff; padding: 0.5rem 1.2rem; border-radius: 5px; font-size: 0.82rem;
+  text-decoration: none; }
+  
+          /* CTA Footer */
+          .cta { background: #1a5c5c; text-align: center; padding: 4rem 2rem; margin: 4rem auto; max-width: 1100px; border-radius: 12px; }
+          .cta h2 { font-family: Georgia, 'Times New Roman', serif; color: #fff; font-size: 2rem; margin-bottom: 0.5rem; }
+          .cta p { color: #b8d4d4; margin-bottom: 1.5rem; }
+          .cta-links { display: flex; gap: 1rem; justify-content: center; }
+          .cta-links a { text-decoration: none; padding: 0.6rem 1.5rem; border-radius: 5px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; }
+          .cta-links .btn-white { background: #fff; color: #333; }
+          .cta-links .btn-outline { background: transparent; color: #fff; border: 1px solid #fff; }
+  
+          footer { text-align: center; padding: 2rem; color: #999; font-size: 0.8rem; }
+  
+          @media (max-width: 768px) {
+              .hero { flex-direction: column-reverse; text-align: center; padding: 3rem 0; }
+              .hero h1 { font-size: 2.5rem; }
+              .hero-buttons { justify-content: center; }
+              .hero-image img { width: 200px; height: 200px; }
+              .exp-item { flex-direction: column; gap: 0.5rem; }
+              nav .nav-links { gap: 1rem; }
+          }
       </style>
   </head>
   <body>
+      <nav>
+          <div class="name">Nagesh B O</div>
+          <div class="nav-links">
+              <a href="#about">About</a>
+              <a href="#experience">Experience</a>
+              <a href="#education">Education</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+          </div>
+      </nav>
+  
       <div class="container">
-          <header>
-              <!-- Replace src with your photo filename once uploaded -->
-              <img src="photo.jpg" alt="Nagesh B O" class="avatar">
-              <h1>Nagesh B O</h1>
-              <p class="subtitle">Solutions Architect</p>
-              <p class="bio">Partnering with commercial teams on pre-sales technical enablement and enterprise deal support. Working with enterprise customers, system
-  integrators, product & engineering teams, and solution architects across US and EU markets on integration design, implementation, and optimization.</p>
-              <div class="links">
-                  <a href="https://www.linkedin.com/in/nageshbo/">LinkedIn</a>
-                  <a href="https://github.com/nageshbo" class="gh">GitHub</a>
-                  <a href="mailto:your@email.com" class="email">Email</a>
-              </div>
-          </header>
-  
-          <section>
-              <h2>Experience</h2>
-  
-              <div class="job">
-                  <div class="job-header">
-                      <span class="job-title">Integration Specialist</span>
-                      <span class="job-date">Jan 2023 – Present</span>
+          <div class="hero">
+              <div class="hero-text">
+                  <span class="hero-tag">Solutions Architect | API & Integration Specialist</span>
+                  <h1>Nagesh<br><span>B O</span></h1>
+                  <p>I bring technical depth, integration expertise, and customer obsession to every problem I tackle. I thrive where systems meet people — designing APIs,
+  enabling enterprise partners, and building tools that scale.</p>
+                  <div class="hero-buttons">
+                      <a href="#projects" class="btn-primary">View Projects</a>
+                      <a href="#experience" class="btn-secondary">My Experience →</a>
                   </div>
-                  <div class="job-company">Amazon</div>
-                  <div class="job-location">Greater London, UK · On-site</div>
-                  <ul>
-                      <li>Partnered with Engineering, Product, and Commercial teams to shape API and platform roadmaps, providing data-informed partner ecosystem
-  feedback.</li>
-                      <li>Built relationships with integration partners generating >$20B in annual revenue; reduced onboarding time from 14 days to 3 days across 4
-  regions.</li>
-                      <li>Built reference implementations, code samples, and documentation accelerating customer adoption of new API features.</li>
-                      <li>Launched a Gen AI Support Assistant consolidating EU and US support data, reducing ticket resolution time.</li>
-                      <li>Designed monitoring dashboards to analyze API usage patterns, detect errors, and track credential due dates.</li>
-                      <li>Delivered data-driven recommendations identifying inactive customers, throttling issues, and adoption gaps.</li>
-                  </ul>
               </div>
-  
-              <div class="job">
-                  <div class="job-header">
-                      <span class="job-title">Application Engineer II</span>
-                      <span class="job-date">Apr 2020 – Jan 2023</span>
-                  </div>
-                  <div class="job-company">Amazon</div>
-                  <div class="job-location">Bengaluru, India · Remote</div>
-                  <ul>
-                      <li>Streamlined Oracle ERP processes by developing SQL/PLSQL-based automations and scheduled jobs.</li>
-                      <li>Led the Fixed Asset Adjustments Project — 18 features with 40 APIs for batch-level asset changes.</li>
-                      <li>Supported financial month-end closures by troubleshooting critical ERP issues.</li>
-                  </ul>
+              <div class="hero-image">
+                  <img src="photo.jpg" alt="Nagesh B O">
               </div>
-  
-              <div class="job">
-                  <div class="job-header">
-                      <span class="job-title">Senior Specialist</span>
-                      <span class="job-date">Jun 2017 – Apr 2020</span>
-                  </div>
-                  <div class="job-company">Deloitte</div>
-                  <div class="job-location">Bengaluru, India</div>
-                  <ul>
-                      <li>Designed and developed reports, interfaces, conversions, and extensions for legacy and third-party systems.</li>
-                      <li>Built integrations using SOA Middleware 11g/12c and Oracle Integration Cloud (OIC).</li>
-                      <li>Implemented REST-based APIs (Node.js) and technology adapters for seamless data exchange.</li>
-                      <li>Integrated BOT solutions with Oracle ERP SaaS Cloud and contributed to conversational UI design.</li>
-                  </ul>
-              </div>
-  
-              <div class="job">
-                  <div class="job-header">
-                      <span class="job-title">Consultant</span>
-                      <span class="job-date">May 2013 – Jun 2017</span>
-                  </div>
-                  <div class="job-company">Deloitte</div>
-                  <div class="job-location">Bengaluru, India</div>
-                  <ul>
-                      <li>Technical Consultant for Oracle E-Business Suite R12 and SOA 11g.</li>
-                  </ul>
-              </div>
-  
-              <div class="job">
-                  <div class="job-header">
-                      <span class="job-title">Oracle ERP Analyst</span>
-                      <span class="job-date">Oct 2012 – Apr 2013</span>
-                  </div>
-                  <div class="job-company">Dell</div>
-                  <div class="job-location">Bengaluru, India</div>
-                  <ul>
-                      <li>Developed customer-facing documents and customized package extensions.</li>
-                      <li>Created Corrective Invoice report for Russia using XSL, XML, and PL/SQL.</li>
-                  </ul>
-              </div>
-  
-              <div class="job">
-                  <div class="job-header">
-                      <span class="job-title">Oracle EBS Analyst</span>
-                      <span class="job-date">Jul 2010 – Oct 2012</span>
-                  </div>
-                  <div class="job-company">Birlasoft</div>
-                  <div class="job-location">Bengaluru, India</div>
-                  <ul>
-                      <li>Designed Real-Time and Batch Interfaces to integrate Siebel CRM with Oracle Applications.</li>
-                      <li>Created custom reports using XML Publisher across Order to Cash and Procure to Pay modules.</li>
-                  </ul>
-              </div>
-          </section>
-  
-          <section>
-              <h2>Education</h2>
-              <div class="edu-item">
-                  <strong>Bangalore Institute of Technology</strong>
-                  <span>Bachelor of Engineering (BE), Information Science · 2006 – 2010</span>
-              </div>
-          </section>
-  
-          <section>
-              <h2>Skills</h2>
-              <div class="skills">
-                  <span>REST APIs</span>
-                  <span>Integration Architecture</span>
-                  <span>Oracle ERP</span>
-                  <span>SQL / PLSQL</span>
-                  <span>Node.js</span>
-                  <span>Oracle Integration Cloud</span>
-                  <span>SOA Middleware</span>
-                  <span>Technical Design</span>
-                  <span>BI Publisher</span>
-                  <span>XML / XSL</span>
-                  <span>API Design</span>
-                  <span>Gen AI</span>
-              </div>
-          </section>
+          </div>
       </div>
+  
+      <section id="about">
+          <div class="container">
+              <div class="section-label">About Me</div>
+              <h2 class="section-title">Who I Am</h2>
+              <div class="about-content">
+                  <p>I became a solutions architect because I'm <strong>wired to connect systems, people, and outcomes.</strong> Deeply technical, stakeholder-aligned, and
+  always armed with data. I thrive in complex integration environments where the path forward requires both engineering depth and customer empathy.</p>
+                  <p><strong>Enterprise customers trust me to design and deliver.</strong> Commercial teams trust me to enable their deals. Engineering teams trust me
+  because I speak their language and bring real-world shipper feedback that shapes roadmaps.</p>
+                  <p>I'm a <strong>force multiplier</strong> for integration success — reducing onboarding friction, building monitoring tools, automating credential
+  management, and ensuring every enterprise partner launches smoothly across markets.</p>
+              </div>
+          </div>
+      </section>
+  
+      <section id="experience">
+          <div class="container">
+              <div class="section-label">Experience</div>
+              <h2 class="section-title">Where I've Worked</h2>
+  
+              <div class="exp-item">
+                  <div class="exp-date">2023 – Present</div>
+                  <div class="exp-details">
+                      <div class="exp-company">Amazon</div>
+                      <div class="exp-role">Integration Specialist</div>
+                      <p class="exp-desc">Partnered with Engineering, Product, and Commercial teams to shape API roadmaps. Built relationships with partners generating
+  >$20B in annual revenue. Reduced onboarding from 14 to 3 days across 4 regions. Launched Gen AI Support Assistant. Designed API monitoring dashboards and throttling
+  management systems.</p>
+                  </div>
+              </div>
+  
+              <div class="exp-item">
+                  <div class="exp-date">2020 – 2023</div>
+                  <div class="exp-details">
+                      <div class="exp-company">Amazon</div>
+                      <div class="exp-role">Application Engineer II</div>
+                      <p class="exp-desc">Streamlined Oracle ERP processes with SQL/PLSQL automations. Led the Fixed Asset Adjustments Project — 18 features with 40 APIs.
+  Supported financial month-end closures and delivered technical documentation.</p>
+                  </div>
+              </div>
+  
+              <div class="exp-item">
+                  <div class="exp-date">2017 – 2020</div>
+                  <div class="exp-details">
+                      <div class="exp-company">Deloitte</div>
+                      <div class="exp-role">Senior Specialist</div>
+                      <p class="exp-desc">Built integrations using SOA Middleware and Oracle Integration Cloud. Implemented REST APIs (Node.js), technology adapters, and
+  messaging patterns. Integrated BOT solutions with Oracle ERP SaaS Cloud.</p>
+                  </div>
+              </div>
+  
+              <div class="exp-item">
+                  <div class="exp-date">2013 – 2017</div>
+                  <div class="exp-details">
+                      <div class="exp-company">Deloitte</div>
+                      <div class="exp-role">Consultant</div>
+                      <p class="exp-desc">Technical Consultant for Oracle E-Business Suite R12 and SOA 11g. Designed reports, interfaces, conversions, and extensions for
+  enterprise systems.</p>
+                  </div>
+              </div>
+  
+              <div class="exp-item">
+                  <div class="exp-date">2012 – 2013</div>
+                  <div class="exp-details">
+                      <div class="exp-company">Dell</div>
+                      <div class="exp-role">Oracle ERP Analyst</div>
+                      <p class="exp-desc">Developed customer-facing documents and customized package extensions. Created Corrective Invoice report for Russia using XSL,
+  XML, and PL/SQL.</p>
+                  </div>
+              </div>
+  
+              <div class="exp-item">
+                  <div class="exp-date">2010 – 2012</div>
+                  <div class="exp-details">
+                      <div class="exp-company">Birlasoft</div>
+                      <div class="exp-role">Oracle EBS Analyst</div>
+                      <p class="exp-desc">Designed Real-Time and Batch Interfaces integrating Siebel CRM with Oracle Applications. Created custom reports using XML
+  Publisher.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section id="education">
+          <div class="container">
+              <div class="section-label">Education</div>
+              <h2 class="section-title">Degrees & Certifications</h2>
+              <div class="edu-grid">
+                  <div class="edu-card">
+                      <h3>Bachelor of Engineering, Information Science</h3>
+                      <div class="school">Bangalore Institute of Technology</div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section id="skills" class="skills-section">
+          <div class="container">
+              <div class="section-label">Skills</div>
+              <h2 class="section-title">What I Bring</h2>
+  
+              <div class="skill-group">
+                  <div class="skill-group-title">Integration & Architecture</div>
+                  <div class="skill-tags">
+                      <span>REST API Design</span>
+                      <span>System Integration</span>
+                      <span>SOA / Middleware</span>
+                      <span>OAuth / LWA</span>
+                      <span>Webhook Design</span>
+                      <span>API Throttling</span>
+                  </div>
+              </div>
+  
+              <div class="skill-group">
+                  <div class="skill-group-title">Data & Monitoring</div>
+                  <div class="skill-tags">
+                      <span>SQL</span>
+                      <span>PL/SQL</span>
+                      <span>CloudWatch</span>
+                      <span>OpenSearch</span>
+                      <span>Redshift / Andes</span>
+                      <span>Data Analysis</span>
+                  </div>
+              </div>
+  
+              <div class="skill-group">
+                  <div class="skill-group-title">Tools & Platforms</div>
+                  <div class="skill-tags">
+                      <span>AWS</span>
+                      <span>Oracle ERP</span>
+                      <span>Oracle Integration Cloud</span>
+                      <span>Node.js</span>
+                      <span>Postman</span>
+                      <span>Kiro CLI</span>
+                      <span>GitHub</span>
+                  </div>
+              </div>
+  
+              <div class="skill-group">
+                  <div class="skill-group-title">Leadership & Enablement</div>
+                  <div class="skill-tags">
+                      <span>Technical Enablement</span>
+                      <span>Enterprise Onboarding</span>
+                      <span>Stakeholder Management</span>
+                      <span>Cross-functional Leadership</span>
+                      <span>Mentoring</span>
+                      <span>Process Automation</span>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section id="projects">
+          <div class="container">
+              <div class="section-label">Projects</div>
+              <h2 class="section-title">What I've Built</h2>
+              <div class="project-grid">
+                  <div class="project-card">
+                      <div class="icon">🤖</div>
+                      <h3>Gen AI Support Assistant</h3>
+                      <p>AI-powered ticket investigation agent consolidating EU and US support data, reducing resolution time with context-aware answers.</p>
+                      <div class="tags">
+                          <span>Gen AI</span>
+                          <span>MCP Servers</span>
+                          <span>Python</span>
+                      </div>
+                  </div>
+                  <div class="project-card">
+                      <div class="icon">📊</div>
+                      <h3>API Throttling Management</h3>
+                      <p>End-to-end TPS monitoring system with per-second CloudWatch metrics, automated alarms, and self-service config updates via CLI.</p>
+                      <div class="tags">
+                          <span>CloudWatch</span>
+                          <span>Automation</span>
+                          <span>AWS</span>
+                      </div>
+                  </div>
+                  <div class="project-card">
+                      <div class="icon">🔍</div>
+                      <h3>Central Logging MCP Server</h3>
+                      <p>Read-only MCP server for querying SWA OpenSearch clusters — enabling AI-assisted log investigation for the support team.</p>
+                      <div class="tags">
+                          <span>Python</span>
+                          <span>OpenSearch</span>
+                          <span>MCP</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <div class="container" id="contact">
+          <div class="cta">
+              <h2>Let's build something great.</h2>
+              <p>Open to Solutions Architect and Integration leadership opportunities</p>
+              <div class="cta-links">
+                  <a href="https://www.linkedin.com/in/nageshbo/" class="btn-white">🔗 LinkedIn</a>
+                  <a href="https://github.com/nageshbo" class="btn-outline">💻 GitHub</a>
+              </div>
+          </div>
+      </div>
+  
+      <footer>
+          © 2026 Nagesh B O · Built with curiosity and code
+      </footer>
   </body>
   </html>
