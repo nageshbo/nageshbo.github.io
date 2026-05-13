@@ -618,6 +618,109 @@
          transition: opacity 0.2s;
          }
          .project-link:hover { opacity: 0.65; }
+         /* ── BLOG ── */
+         #blog { border-top: 1px solid var(--border); }
+         .blog-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 1px;
+         background: var(--border);
+         border: 1px solid var(--border);
+         }
+         .blog-card {
+         background: var(--bg);
+         padding: 2.2rem;
+         transition: background 0.25s;
+         position: relative;
+         overflow: hidden;
+         display: flex;
+         flex-direction: column;
+         }
+         .blog-card::before {
+         content: '';
+         position: absolute;
+         top: 0; left: 0; right: 0;
+         height: 1px;
+         background: var(--gold);
+         transform: scaleX(0);
+         transform-origin: left;
+         transition: transform 0.35s ease;
+         }
+         .blog-card:hover { background: var(--surface); }
+         .blog-card:hover::before { transform: scaleX(1); }
+         .blog-meta {
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+         margin-bottom: 1.1rem;
+         }
+         .blog-date {
+         font-family: 'DM Mono', monospace;
+         font-size: 0.67rem;
+         color: var(--text-muted);
+         letter-spacing: 0.05em;
+         }
+         .blog-read-time {
+         font-family: 'DM Mono', monospace;
+         font-size: 0.67rem;
+         color: var(--text-dim);
+         letter-spacing: 0.05em;
+         }
+         .blog-read-time::before {
+         content: '·';
+         margin-right: 1rem;
+         color: var(--text-dim);
+         }
+         .blog-card h3 {
+         font-family: 'Cormorant Garamond', serif;
+         font-size: 1.25rem;
+         font-weight: 600;
+         color: var(--text);
+         line-height: 1.25;
+         margin-bottom: 0.7rem;
+         }
+         .blog-card p {
+         color: var(--text-muted);
+         font-size: 0.83rem;
+         line-height: 1.78;
+         flex: 1;
+         margin-bottom: 1.4rem;
+         }
+         .blog-tags {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 0.4rem;
+         margin-bottom: 1.1rem;
+         }
+         .blog-tags span {
+         font-family: 'DM Mono', monospace;
+         font-size: 0.66rem;
+         padding: 0.2rem 0.55rem;
+         border: 1px solid var(--border);
+         color: var(--text-muted);
+         border-radius: 1px;
+         }
+         .blog-link {
+         font-family: 'DM Mono', monospace;
+         font-size: 0.7rem;
+         color: var(--gold);
+         text-decoration: none;
+         letter-spacing: 0.04em;
+         transition: opacity 0.2s;
+         margin-top: auto;
+         }
+         .blog-link:hover { opacity: 0.65; }
+         .blog-cta {
+         margin-top: 2.5rem;
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+         }
+         .blog-cta-line {
+         flex: 1;
+         height: 1px;
+         background: var(--border);
+         }
          /* ── CTA / CONTACT ── */
          #contact { padding: 0 0 6rem; }
          .cta-wrap {
@@ -725,6 +828,7 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
          </ul>
          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
@@ -1039,6 +1143,32 @@
                      <span>Google Maps</span><span>Community Impact</span><span>12M+ Views</span><span>8 Years</span>
                   </div>
                </div>
+            </div>
+         </div>
+      </section>
+      <!-- BLOG -->
+      <section id="blog">
+         <div class="container">
+            <div class="eyebrow" data-reveal>Blog</div>
+            <h2 class="section-title" data-reveal data-delay="1">Writing &amp; Thinking</h2>
+            <div class="blog-grid">
+               <div class="blog-card" data-reveal>
+                  <div class="blog-meta">
+                     <span class="blog-date">May 2026</span>
+                     <span class="blog-read-time">7 min read</span>
+                  </div>
+                  <h3>Prompt engineering won’t make you senior — here’s what will</h3>
+                  <p>Systems thinking beats clever prompts every single time — here’s what the AI-augmented career path really looks like.</p>
+                  <div class="blog-tags">
+                     <span>AI Agents</span><span>AWS Bedrock</span><span>Step Functions</span>
+                  </div>
+                  <a href="https://medium.com/p/bb0bbd70972a" target="_blank" class="blog-link">Read on Medium →</a>
+               </div>
+            </div>
+            <div class="blog-cta" data-reveal>
+               <div class="blog-cta-line"></div>
+               <a href="https://medium.com/@nageshbo" target="_blank" class="btn btn-ghost">All articles on Medium →</a>
+               <div class="blog-cta-line"></div>
             </div>
          </div>
       </section>
